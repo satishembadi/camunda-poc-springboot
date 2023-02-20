@@ -2,6 +2,7 @@ package com.citizen.camunda.poc.controller;
 
 import com.citizen.camunda.poc.service.IUserService;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,7 +26,7 @@ public class AuthController {
     this.httpSession = httpSession;
   }
 
-  @PostMapping("/login")
+  @PostMapping(value = "/login", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<String> login(@RequestParam String username, @RequestParam String password) {
     Optional<String> u = userAccessService.login(httpSession.getId(), username, password);
     if (u.isPresent()) {

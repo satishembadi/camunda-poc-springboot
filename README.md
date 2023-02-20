@@ -1,4 +1,4 @@
-# liquibase-springboot-h2-example
+
 This is a sample project to demonstrate integration of Liquibase and H2 embedded database with Spring Boot application.
 
 Liquibase is an open-source database schema change management solution which enables you to manage revisions of your database changes easily. Liquibase makes it easy for anyone involved in the application release process to:
